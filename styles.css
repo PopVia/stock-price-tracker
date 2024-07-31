@@ -1,0 +1,46 @@
+#container {
+  width: 300px;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+#stock-list {
+  margin-bottom: 10px;
+}
+
+.stock-item {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#stock-input {
+  width: 200px;
+  margin-right: 5px;
+}
+
+button {
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-size: 14px;
+  color: #333;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 14px;
+}
