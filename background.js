@@ -1,12 +1,15 @@
+const apiKey = 'cqca2cpr01qmbcu94ht0cqca2cpr01qmbcu94htg';
+
+// Initialize alarms when the extension is installed
 chrome.runtime.onInstalled.addListener(() => {
   chrome.alarms.create('fetchStockPrices', { periodInMinutes: 1 });
 });
 
+// Handle alarms
 chrome.alarms.onAlarm.addListener(alarm => {
   if (alarm.name === 'fetchStockPrices') {
     chrome.storage.local.get('stocks', function(data) {
       const stocks = data.stocks || ['BAC', 'F', 'PFE'];
-      const apiKey = 'cqca2cpr01qmbcu94ht0cqca2cpr01qmbcu94htg';
 
       stocks.forEach(stock => {
         fetch(`https://finnhub.io/api/v1/quote?symbol=${stock}&token=${apiKey}`)
