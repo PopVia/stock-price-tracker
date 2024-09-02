@@ -1,46 +1,196 @@
-#container {
-  width: 300px;
-  padding: 10px;
-}
-
-h1 {
-  font-size: 24px;
-}
-
-#stock-list {
-  margin-bottom: 10px;
-}
-
-.stock-item {
-  margin-bottom: 5px;
+body {
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-#stock-input {
-  width: 200px;
-  margin-right: 5px;
+#container {
+  width: 360px;
+  background-color: #2b2b2b;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-button {
-  padding: 5px;
+h1, h2 {
+  text-align: center;
+  color: #9d8aff;
+  margin: 0;
+  padding: 14px 0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
-li {
-  font-size: 14px;
-  color: #333;
-}
-
-.remove-button {
-  background: none;
+.search-container input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
   border: none;
-  color: red;
+  margin-right: 10px;
+  outline: none;
+}
+
+/* Search button and Add to Watchlist button styles */
+.search-container button, .remove-button,
+#add-to-watchlist,
+#add-to-portfolio {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #9d8aff;
+  color: #ffffff;
   cursor: pointer;
   font-size: 14px;
+}
+
+#stock-data {
+  padding: 10px;
+  text-align: center;
+  min-height: 60px; /* Adjust to ensure the buttons stay in place */
+}
+
+#footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333333;
+  padding: 10px 0;
+}
+
+.nav-item {
+  width: 100%;
+  color: #9d8aff;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;  
+}
+
+.nav-item.active {
+  background-color: #9d8aff; /* Reverse the colors */
+  color: #2b2b2b; /* Reverse text color to the background color */
+  font-weight: bold; /* Make the active tab bold */
+}
+
+/* General tab content styling */
+.tab-content {
+  display: none; /* Hidden by default */
+  width: 100%; /* Ensure full width */
+  padding: 10px; /* Consistent padding */
+  box-sizing: border-box; /* Include padding and border in width */
+  flex-direction: column; /* Flexbox layout for column direction */
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.watchlist-item:last-child {
+  border-bottom: none;
+}
+
+.stock-info {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.stock-symbol {
+  font-weight: bold;
+  color: #9d8aff;
+  margin-right: 10px;
+}
+
+.stock-change {
+  font-size: 18px;
+}
+
+.remove-button:hover {
+  color: #ff1a1a;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.button-container button {
+  flex: 1;
+  margin-right: 5px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #9d8aff;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button-container button:last-child {
+  margin-right: 0;
+}
+
+.button-container button:hover,
+#search-stock:hover {
+  background-color: #7b67db;
+}
+
+#add-to-watchlist i,
+#add-to-portfolio i {
+  margin-right: 8px;
+}
+
+/* Portfolio and Watchlist item container */
+.portfolio-item,
+.watchlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  color: #e6e6e6;
+}
+
+.portfolio-symbol,
+.stock-symbol {
+  font-weight: bold;
+  color: #9d8aff;
+}
+
+.portfolio-gain {
+  color: green;
+}
+
+.portfolio-loss {
+  color: red;
+}
+
+/* Add space between Invested and LTP */
+.portfolio-item .stock-info span,
+.watchlist-item .stock-info span {
+  margin-right: 8px;
+}
+
+/* Portfolio Summary Container */
+.portfolio-summary  {
+  background-color: #2b2b2b;
+  border-radius: 8px;
+  font-weight: bold;
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #e6e6e6;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

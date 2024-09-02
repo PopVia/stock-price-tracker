@@ -3,15 +3,43 @@
 <head>
   <title>Stock Tracker</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div id="container">
     <h1>Stock Tracker</h1>
-    <div id="stock-list">
-      <!-- Stock prices will be displayed here -->
+    <div id="content">
+      <div id="home-content" class="tab-content active">
+        <div class="search-container">
+          <input type="text" id="stock-input" placeholder="Search for stocks..." onkeydown="handleKeyDown(event)">
+          <button id="search-stock">Search</button>
+        </div>
+        <div id="stock-data"></div>
+        <div class="button-container">
+        <button id="add-to-watchlist" class="watchlist-btn"><i class="fas fa-plus"></i> Add to Watchlist</button>
+        <button id="add-to-portfolio"><i class="fas fa-briefcase"></i> Add to Portfolio</button>
+        </div>
+      </div>
+      <div id="portfolio-content" class="tab-content">
+        <h2>My Portfolio</h2>
+        <div id="portfolio-summary"></div>
+        <div id="portfolio"></div>
+      </div>      
+      <div id="watchlist-content" class="tab-content">
+        <h2>My Watchlist</h2>
+        <div id="watchlist"></div>
+      </div>
+      <div id="trade-content" class="tab-content">
+        <h2>Trade</h2>
+        <p>Placeholder for trade features</p>
+      </div>
     </div>
-    <input type="text" id="stock-input" placeholder="Enter stock symbol">
-    <button id="add-stock">Add Stock</button>
+    <div id="footer">
+      <div class="nav-item" id="home-tab"><i class="fas fa-home"></i> Home</div>
+      <div class="nav-item" id="portfolio-tab"><i class="fas fa-briefcase"></i> Portfolio</div>
+      <div class="nav-item" id="watchlist-tab"><i class="fas fa-eye"></i> Watchlist</div>
+      <div class="nav-item" id="trade-tab" style="display: none;"><i class="fas fa-exchange-alt"></i> Trade</div>
+    </div>
   </div>
   <script src="popup.js"></script>
 </body>
